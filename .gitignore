@@ -172,3 +172,4 @@ cython_debug/
 
 # Python Main Test
 python-abc/main_00_abc.py
+python-abc/main_01_duck_typing.py
