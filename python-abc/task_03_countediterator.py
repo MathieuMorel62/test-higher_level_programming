@@ -9,10 +9,11 @@ class CountedIterator:
     def __next__(self):
         """Implementation of the next method"""
         try:
+            item = next(self._iterator)
             self._count += 1
-            return next(self._iterator)
+            return item
         except StopIteration:
-            raise StopIteration
+            raise
 
     def get_count(self):
         """Get the count of items iterated"""
