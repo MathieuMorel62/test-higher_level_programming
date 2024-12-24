@@ -3,14 +3,17 @@ class CountedIterator:
 
     def __init__(self, data):
         """Initialize the CountedIterator object"""
-        self.iterator = iter(data)
-        self.count = 0
+        self._iterator = iter(data)
+        self._count = 0
 
     def __next__(self):
         """Implementation of the next method"""
-        self.count += 1
-        return next(self.iterator)
+        try:
+            self._count += 1
+            return next(self._iterator)
+        except StopIteration:
+            raise StopIteration
 
     def get_count(self):
         """Get the count of items iterated"""
-        return self.count
+        return self._count
